@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'com.azure.sqlmi'
+version = '1.0.0'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Microsoft SQL Server JDBC Driver
+    implementation 'com.microsoft.sqlserver:mssql-jdbc:12.4.2.jre11'
+}
+
+application {
+    mainClass = 'CertificateDnsChecker'
+}
+
+tasks.named('run') {
+    standardInput = System.in
+}
